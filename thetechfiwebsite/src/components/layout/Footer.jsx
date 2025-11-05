@@ -14,7 +14,7 @@ const Footer = ({
     initials: "TF",
     logo: "tech_fi_logo_512x512_image.jpeg",
   },
-  description = "Transforming businesses through innovative technology solutions. We specialize in Salesforce automation, implementation, and React development.",
+  description = "Empowering startups and small businesses with smart Salesforce, web, and mobile solutions. From Salesforce automation and data migration to React-powered web and mobile app development — we help you scale efficiently with technology that grows with your business.",
   copyright = "© 2024 The Technology Fiction. All rights reserved.",
   className = "",
 }) => {
@@ -88,8 +88,13 @@ const Footer = ({
             <ul className="space-y-2 text-gray-400">
               {FOOTER_DATA.company.map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-white transition-colors">
-                    {item}
+                  <a
+                    href={item.href}
+                    target={item.name === "Salesforce Blog" ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition-colors"
+                  >
+                    {item.name}
                   </a>
                 </li>
               ))}

@@ -20,10 +20,10 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Skip to main content link for screen readers */}
-      <a href="#main-content" className="skip-link">
+      {/*<a href="#main-content" className="skip-link">
         Skip to main content
       </a>
-      
+      */}
       <Navigation 
         logo={SITE_CONFIG.company}
         menuItems={SITE_CONFIG.navigation.menuItems}

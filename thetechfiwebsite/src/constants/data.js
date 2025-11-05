@@ -1,4 +1,4 @@
-import { Zap, Globe, Users, Phone, Mail, MapPin } from 'lucide-react'
+import { Zap, Globe, Users, Database , Smartphone, Mail, Cpu } from 'lucide-react'
 
 export const SITE_CONFIG = {
   company: {
@@ -27,20 +27,64 @@ export const SERVICES_DATA = [
   {
     icon: Zap,
     title: "Salesforce Consulting & Implementation",
-    description: "Expert Salesforce consulting services and CRM implementation for small businesses and startups. Professional Salesforce consultants providing affordable IT solutions.",
-    features: ["Salesforce CRM Setup", "Custom CRM Development", "Salesforce Lightning Migration", "CRM Customization Services"]
+    description:
+      "End-to-end Salesforce consulting and CRM implementation for startups and growing businesses.",
+    features: [
+      "Salesforce CRM Setup",
+      "Custom CRM Development",
+      "Salesforce Lightning Migration",
+      "CRM Customization Services",
+    ],
+  },
+  {
+    icon: Database,
+    title: "Salesforce Data Migration & ETL",
+    description:
+      "Accurate and secure Salesforce data migration with ETL, cleansing, mapping, and quality checks.",
+    features: [
+      "Discovery & Data Planning",
+      "Data Cleansing & Deduplication",
+      "Custom Field Mapping & Transformation",
+      "ETL Tool Expertise (Data Loader, DBAmp, MuleSoft, etc.)",
+      "Quality Assurance & Post-Migration Support",
+    ],
   },
   {
     icon: Globe,
-    title: "Managed IT Services & Cloud Computing",
-    description: "Comprehensive managed IT services including cloud computing solutions, IT infrastructure management, and business IT solutions for growing companies.",
-    features: ["Cloud Computing Services", "IT Infrastructure Management", "IT Support & Maintenance", "Business IT Solutions"]
+    title: "Website & Web Application Development",
+    description:
+      "Modern, responsive websites and web apps built for performance, scalability, and great UX.",
+    features: [
+      "Custom Website & Portal Development",
+      "Headless CMS & Progressive Web Apps",
+      "Legacy Modernisation & Third-Party Integrations",
+      "Performance & Accessibility Optimisation",
+      "UX/UI Design & User Experience",
+    ],
   },
   {
-    icon: Users,
-    title: "Salesforce Integration & Development",
-    description: "Salesforce integration experts providing custom CRM development, Salesforce Lightning migration, and integration with existing systems for optimal performance.",
-    features: ["Salesforce Integration Experts", "Custom CRM Development", "API Integration", "Salesforce Development Company"]
+    icon: Smartphone,
+    title: "Mobile & Cross‑Platform App Development",
+    description: "Create native iOS and Android apps or cross‑platform solutions with Flutter or React Native. Our end‑to‑end services cover discovery, UI/UX design, secure backend integration, testing, launch and post‑release support. We also build progressive web apps to deliver a native‑like experience on the web.",
+    features: [
+      "Native iOS & Android App Development",
+      "Flutter & Cross‑Platform App Development",
+      "Progressive Web Apps (PWAs)",
+      "Full Lifecycle: Design, Development, Testing, Launch, Support",
+      "Scalable Architecture & Integration"
+    ]
+  },
+  {
+    icon: Cpu,
+    title: "AI Agents & Automation",
+    description: "Revolutionize your business operations with custom AI agents designed to automate calls, collect feedback, and handle repetitive tasks intelligently. From AI-powered calling assistants to chat-driven customer engagement systems, we create end-to-end AI workflows that integrate seamlessly with your CRM and business tools to boost efficiency and enhance user experience.",
+    features: [
+      "Custom AI Calling & Voice Agents",
+      "Feedback & Lead Collection Automation",
+      "CRM Integration with Salesforce & HubSpot",
+      "Conversational AI & Chatbot Development",
+      "AI Workflow Orchestration using LangChain & n8n"
+    ]
   }
 ]
 
@@ -112,10 +156,10 @@ export const FOOTER_DATA = {
     "Mobile App Development"
   ],
   company: [
-    "About Us",
-    "Careers",
-    "Blog",
-    "Contact"
+    { name: "About Us", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Salesforce Blog", href: "https://thetechnologyfiction.com/" },
+    { name: "Contact", href: "#" }
   ],
   socialLinks: [
     { name: "Instagram", icon: "instagram", href: "#" },

@@ -4,7 +4,7 @@ import Button from '../ui/Button'
 import Container from '../ui/Container'
 
 const Hero = ({ 
-  subtitle = "Expert IT consulting services and Salesforce implementation specialists. We provide managed IT services, CRM customization, and cloud computing solutions to help small businesses and startups scale efficiently. Professional Salesforce consultants.",
+  subtitle = "Expert Salesforce and IT consulting for startups and small businesses. We specialize in Salesforce automation, CRM customization, cloud computing, and modern web and mobile app development to help your business scale efficiently.",
   primaryButton = { text: "Get Free Consultation", action: () => {} },
   logo = { text: "The Technology Fiction", logo: "tech_fi_logo_512x512_image.jpeg" },
   className = ""
@@ -56,7 +56,7 @@ const Hero = ({
                     />
                   </div>
                   <h3 className="text-2xl font-bold mb-2 text-gradient">{logo.name || logo.text}</h3>
-                  <p className="text-secondary-600">IT Infrastructure Management & CRM Solutions</p>
+                  <p className="text-secondary-600">Transforming Businesses with Salesforce, Web, Cloud & Mobile App Solutions</p>
                 </div>
               </div>
             </div>

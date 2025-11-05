@@ -6,26 +6,7 @@ import Container from '../ui/Container'
 const Services = ({ 
   title = "Our Services",
   subtitle = "Comprehensive solutions to drive your business forward",
-  services = [
-    {
-      icon: Zap,
-      title: "Salesforce Automation",
-      description: "Streamline your business processes with custom Salesforce automation solutions that boost productivity and efficiency.",
-      features: ["Workflow Automation", "Process Builder", "Flow Designer", "Apex Development"]
-    },
-    {
-      icon: Globe,
-      title: "Salesforce Implementation",
-      description: "Complete Salesforce implementation from setup to go-live with expert consultation and training.",
-      features: ["System Design", "Data Migration", "User Training", "Go-live Support"]
-    },
-    {
-      icon: Users,
-      title: "React Development",
-      description: "Modern, responsive websites and web applications built with React for optimal performance and user experience.",
-      features: ["Custom Components", "Responsive Design", "Performance Optimization", "SEO Friendly"]
-    }
-  ],
+  services = [], //required for structure data being pulled directly in app.jsx from services
   className = ""
 }) => {
   return (
