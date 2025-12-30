@@ -1,10 +1,10 @@
-import { Zap, Globe, Users, Database , Smartphone, Mail, Cpu } from 'lucide-react'
+import { Zap, Globe, Users, Database , Smartphone, MessageCircle, Cpu } from 'lucide-react'
 
 export const SITE_CONFIG = {
   company: {
     name: "The Technology Fiction",
     initials: "TF",
-    email: "thetechfisolutions@gmail.com",
+    email: "thetechfilabs@gmail.com",
     phone: "+91 7976111087",
     address: "Jaipur, Rajasthan 302001",
     logo: "/tech_fi_logo_512x512_image.jpeg"
@@ -85,7 +85,22 @@ export const SERVICES_DATA = [
       "Conversational AI & Chatbot Development",
       "AI Workflow Orchestration using LangChain & n8n"
     ]
+  },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Automation Solutions",
+    description: "Transform customer communication with powerful WhatsApp automation tailored for your business. We design and build intelligent WhatsApp workflows that automate customer support, lead generation, notifications, and marketing campaigns — all while integrating seamlessly with your existing systems like CRM, databases, and internal tools.",
+    features: [
+      "WhatsApp Chatbot & Conversational Flows",
+      "Lead Generation & Qualification Automation",
+      "WhatsApp Marketing & Broadcast Campaigns",
+      "Customer Support & Ticket Automation",
+      "CRM & Backend Integration (Salesforce, Google Sheets, APIs)",
+      "Payment, Booking & Notification Automation",
+      "AI-powered WhatsApp Assistants & Smart Replies"
+    ]
   }
+  
 ]
 
 export const TESTIMONIALS_DATA = [
@@ -129,9 +144,9 @@ export const TESTIMONIALS_DATA = [
 
 export const ABOUT_DATA = {
   stats: [
-    { number: "100+", label: "IT Projects Completed" },
-    { number: "50+", label: "Small Business Clients" },
-    { number: "5+", label: "Years Experience" },
+    { number: "15+", label: "IT Projects Completed" },
+    { number: "30+", label: "Small Business Clients" },
+    { number: "10+", label: "Years Experience" },
     { number: "24/7", label: "IT Support Available" }
   ],
   features: [
