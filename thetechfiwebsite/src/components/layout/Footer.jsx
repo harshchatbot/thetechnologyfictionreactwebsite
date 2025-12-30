@@ -14,7 +14,7 @@ const Footer = ({
     initials: "TF",
     logo: "tech_fi_logo_512x512_image.jpeg",
   },
-  description = "Empowering startups and small businesses with smart Salesforce, web, and mobile solutions. From Salesforce automation and data migration to React-powered web and mobile app development — we help you scale efficiently with technology that grows with your business.",
+  description = "We help startups and small businesses scale with powerful Salesforce solutions, modern web and mobile applications, and intelligent automation. From Salesforce CRM implementation, data migration, and AI-driven workflows to React-based websites, mobile apps, and WhatsApp automation—we build technology that simplifies operations, enhances customer engagement, and drives growth.",
   copyright = "© 2024 The Technology Fiction. All rights reserved.",
   className = "",
 }) => {

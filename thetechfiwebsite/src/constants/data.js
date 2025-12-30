@@ -168,7 +168,8 @@ export const FOOTER_DATA = {
     "Salesforce Consulting & Implementation",
     "Salesforce Data Migration & ETL",
     "Website & Web App Development",
-    "Mobile App Development"
+    "Mobile App Development",
+    "WhatsApp Automation Solutions"
   ],
   company: [
     { name: "About Us", href: "#" },
