@@ -14,10 +14,19 @@ import SubscribeModal from '../components/SubscribeModal';
 // 3. Footer (Check if this is in layout or components folder in your tree)
 // If your Footer is in src/components/layout/Footer.jsx, change this path to '../components/layout/Footer'
 import Footer from '../components/layout/Footer'; 
+import Seo from "../components/Seo";
+
 
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-primary">
+
+      <Seo 
+        title="Best Salesforce Coaching in Ajmer & Jaipur | Real-Time Project Training"
+        description="Don't just learn Salesforce—Master it. Join Ajmer's only Architect-led training program. Specializing in LWC, AI Agents, and Real-Time Live Projects."
+        canonical="https://thetechnologyfiction.com/"
+        type="website"
+      />
 
       <SubscribeModal />
       
