@@ -32,7 +32,7 @@ const Hero = () => {
         >
           <Terminal size={14} className="text-accent" />
           <span className="text-xs md:text-sm font-bold text-accent tracking-widest uppercase">
-            For Salesforce Architects & Developers
+            For Salesforce Architects,Developers & Career Switchers
           </span>
         </motion.div>
 
@@ -57,7 +57,7 @@ const Hero = () => {
           The Technology Fiction is your roadmap to the technical elite. 
           Deep architectural guides, career strategy, and unfiltered mentorship.
           <span className="block mt-4 text-white/40 text-sm italic font-medium">
-            No fluff. No sales pitches. Just code.
+            No fluff. No sales pitches. Just pure Learning.
           </span>
         </motion.p>
 

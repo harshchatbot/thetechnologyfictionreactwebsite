@@ -9,6 +9,8 @@ import FeaturedGuides from '../components/FeaturedGuides';
 import Newsletter from '../components/Newsletter'; // Now this exists!
 import WhatsAppChatButton from '../components/WhatsAppChatButton';
 
+import SubscribeModal from '../components/SubscribeModal';
+
 // 3. Footer (Check if this is in layout or components folder in your tree)
 // If your Footer is in src/components/layout/Footer.jsx, change this path to '../components/layout/Footer'
 import Footer from '../components/layout/Footer'; 
@@ -16,6 +18,8 @@ import Footer from '../components/layout/Footer';
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-primary">
+
+      <SubscribeModal />
       
       <Navigation />
 
