@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer className="bg-primary pt-20 pb-28 border-t border-white/5 relative overflow-hidden font-sans">
+    <footer className="bg-primary pt-20 pb-28 md:pb-12 border-t border-white/5 relative overflow-hidden font-sans">
       
       {/* Background Ambience */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full pointer-events-none overflow-hidden">
@@ -65,7 +65,7 @@ const Footer = () => {
              <h4 className="font-heading font-bold text-white mb-6 tracking-wide">Connect</h4>
              <ul className="space-y-4">
                 <li>
-                    <a href="mailto:hello@thetechnologyfiction.com" className="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2 hover:translate-x-1 duration-200">
+                    <a href="mailto:thetechnologyfiction@gmail.com" className="text-text-muted hover:text-accent transition-colors text-sm flex items-center gap-2 hover:translate-x-1 duration-200">
                         <Mail size={14} /> Email Me
                     </a>
                 </li>
@@ -78,22 +78,23 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* BOTTOM BAR - UPDATED LINK */}
-        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-text-muted/60 text-xs">
+        {/* BOTTOM BAR */}
+        {/* Increased padding to md:pr-32 for extra safety */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4 md:pr-32 relative z-10">
+            <p className="text-zinc-500 text-xs">
                 &copy; 2024 The Technology Fiction. All rights reserved.
             </p>
             
-            {/* The TechFi Labs Signature Link */}
             <div className="flex items-center gap-2">
-                <span className="text-xs text-text-muted">Client services delivered via</span>
+                <span className="text-xs text-zinc-500">Client services delivered via</span>
                 <a 
                   href="https://www.techfilabs.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="font-heading font-bold text-accent text-xs uppercase tracking-[0.15em] hover:text-white transition-colors border-b border-transparent hover:border-accent pb-0.5"
+                  /* Added 'relative z-[100]' to force it above any overlapping elements */
+                  className="font-bold text-accent text-xs uppercase tracking-[0.15em] hover:text-white transition-colors border-b border-transparent hover:border-blue-500 pb-0.5 cursor-pointer relative z-[100]"
                 >
-                  TechFi Labs
+                  <strong>TechFi Labs</strong>
                 </a>
             </div>
         </div>

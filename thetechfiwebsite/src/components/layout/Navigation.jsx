@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ArrowRight, ChevronRight, ExternalLink } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 // LOCKED CONTEXT: Authority Links
 const NAV_ITEMS = [
-  { id: "roadmaps", label: "Roadmaps", path: "/#roadmaps" }, // Anchor to section
+  { id: "roadmaps", label: "Roadmaps", path: "/#roadmaps" },
   { id: "resources", label: "Resources", path: "/#resources" },
   { id: "mentorship", label: "Mentorship", path: "/#mentorship" },
   { id: "blog", label: "Blog", path: "https://thetechnologyfiction.com/blog", external: true },
@@ -13,10 +13,9 @@ const NAV_ITEMS = [
 
 const Navigation = ({
   logo = {
-    text: "The Technology Fiction", // UPDATED BRANDING
+    text: "The Technology Fiction",
     initials: "TF",
-    // Ensure this path matches your public folder
-    logo: "/tech_fi_logo_512x512_image.jpeg", 
+    logo: "/tech_fi_logo_512x512_image.jpeg",
   },
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,7 +30,7 @@ const Navigation = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // 2. BODY LOCK
+  // 2. BODY LOCK (Prevents background scrolling when menu is open)
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "unset";
   }, [isMenuOpen]);
@@ -45,7 +44,7 @@ const Navigation = ({
       return;
     }
 
-    // If it's a hash link on the homepage
+    // Hash Link Logic
     if (item.path.startsWith("/#")) {
       const elementId = item.path.replace("/#", "");
       if (location.pathname !== "/") {
@@ -75,10 +74,11 @@ const Navigation = ({
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
           scrolled 
             ? "bg-primary/90 backdrop-blur-xl border-white/10 py-3" 
-            : "bg-transparent border-transparent py-6"
+            : "bg-transparent border-transparent py-4 lg:py-6"
         }`}
       >
-        <div className="container mx-auto px-6">
+        {/* FIX: Changed px-6 to px-4 for mobile (more space) -> md:px-6 for larger screens */}
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex justify-between items-center">
             
             {/* LOGO - CLICK TO HOME */}
@@ -86,20 +86,21 @@ const Navigation = ({
               onClick={() => navigate("/")}
               className="flex items-center gap-3 z-50 relative cursor-pointer group"
             >
-              <div className="w-10 h-10 rounded-full overflow-hidden border border-white/10 shadow-lg group-hover:border-accent/50 transition-colors">
+              <div className="w-9 h-9 md:w-10 md:h-10 rounded-full overflow-hidden border border-white/10 shadow-lg group-hover:border-accent/50 transition-colors">
                 <img
                   src={logo.logo}
                   alt={logo.text}
                   className="w-full h-full object-cover opacity-90"
                 />
               </div>
-              <span className="text-lg font-heading font-bold tracking-tight text-white hidden md:block group-hover:text-accent transition-colors">
+              {/* FIX: Changed 'md:block' to 'lg:block' to prevent tablet overlapping */}
+              <span className="text-lg font-heading font-bold tracking-tight text-white hidden lg:block group-hover:text-accent transition-colors">
                 TheTechnology<span className="text-accent">Fiction</span>
               </span>
             </div>
 
-            {/* DESKTOP NAV */}
-            <div className="hidden md:flex items-center gap-8">
+            {/* DESKTOP NAV - FIX: Hidden until 'lg' (1024px) */}
+            <div className="hidden lg:flex items-center gap-8">
               {NAV_ITEMS.map((item) => (
                 <button
                   key={item.id}
@@ -111,7 +112,7 @@ const Navigation = ({
                 </button>
               ))}
 
-              {/* PRIMARY CTA - NEWSLETTER / STARTER KIT */}
+              {/* PRIMARY CTA */}
               <button
                 className="group relative px-6 py-2.5 bg-accent text-primary text-sm font-bold rounded-md hover:bg-white transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(224,184,76,0.2)]"
               >
@@ -120,10 +121,10 @@ const Navigation = ({
               </button>
             </div>
 
-            {/* MOBILE TOGGLE */}
+            {/* MOBILE TOGGLE - FIX: Visible until 'lg' */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden z-50 p-2 text-white hover:text-accent transition-colors"
+              className="lg:hidden z-50 p-2 text-white hover:text-accent transition-colors"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -139,7 +140,8 @@ const Navigation = ({
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 z-40 bg-primary md:hidden flex flex-col pt-32 px-6 h-screen overflow-hidden"
+            // FIX: Added 'overflow-y-auto' for landscape phone safety
+            className="fixed inset-0 z-40 bg-primary lg:hidden flex flex-col pt-28 px-6 h-screen overflow-y-auto"
           >
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
@@ -173,7 +175,8 @@ const Navigation = ({
                 className="w-full py-4 bg-accent text-primary font-bold text-lg rounded-lg flex items-center justify-center gap-2 active:scale-95 transition-transform"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get Starter Kit
+                {/* FIX: Text matches desktop version now */}
+                Join Inner Circle
                 <ArrowRight className="w-5 h-5" />
               </button>
             </motion.div>
