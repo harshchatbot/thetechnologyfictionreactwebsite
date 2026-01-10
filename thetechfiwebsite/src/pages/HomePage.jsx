@@ -1,69 +1,40 @@
-import {
-    Navigation,
-    Hero,
-    Services,
-    About,
-    Testimonials,
-    Contact,
-    Footer
-  } from "../components";
-  
-  import {
-    SITE_CONFIG,
-    SERVICES_DATA,
-    TESTIMONIALS_DATA,
-    ABOUT_DATA,
-    CONTACT_INFO,
-    FOOTER_DATA
-  } from "../constants/data";
-  
-  import WhatsAppChatButton from "../components/WhatsAppChatButton";
-  
-  export default function HomePage() {
-    return (
-      <div className="min-h-screen bg-bg text-text">
-        <Navigation
-          logo={SITE_CONFIG.company}
-          menuItems={SITE_CONFIG.navigation.menuItems}
-          ctaButton={SITE_CONFIG.navigation.ctaButton}
-        />
-  
-        <main id="main-content">
-          <Hero
-            logo={SITE_CONFIG.company}
-            primaryButton={{
-              text: "Explore Our Services",
-              action: () => {
-                const servicesSection = document.getElementById("services");
-                if (servicesSection) {
-                  servicesSection.scrollIntoView({ behavior: "smooth" });
-                }
-              }
-            }}
-          />
-  
-          <Services services={SERVICES_DATA} />
-  
-          <About
-            logo={SITE_CONFIG.company}
-            stats={ABOUT_DATA.stats}
-            features={ABOUT_DATA.features}
-          />
-  
-          <Testimonials testimonials={TESTIMONIALS_DATA} />
-  
-          <Contact contactInfo={CONTACT_INFO} />
-        </main>
-  
-        <Footer
-          logo={SITE_CONFIG.company}
-          services={FOOTER_DATA.services}
-          company={FOOTER_DATA.company}
-          socialLinks={FOOTER_DATA.socialLinks}
-        />
-  
-        <WhatsAppChatButton />
-      </div>
-    );
-  }
-  
+import React from 'react';
+
+// 1. Layout Components (Keeping your structure)
+import Navigation from '../components/layout/Navigation'; 
+import Hero from '../components/sections/Hero'; 
+
+// 2. Feature Components
+import FeaturedGuides from '../components/FeaturedGuides';
+import Newsletter from '../components/Newsletter'; // Now this exists!
+import WhatsAppChatButton from '../components/WhatsAppChatButton';
+
+// 3. Footer (Check if this is in layout or components folder in your tree)
+// If your Footer is in src/components/layout/Footer.jsx, change this path to '../components/layout/Footer'
+import Footer from '../components/layout/Footer'; 
+
+export default function HomePage() {
+  return (
+    <div className="flex flex-col min-h-screen bg-primary">
+      
+      <Navigation />
+
+      <main>
+        {/* The Authority Hero */}
+        <Hero />
+
+        {/* The Value Stack */}
+        <FeaturedGuides />
+        
+        {/* The Lead Magnet */}
+        <Newsletter />
+      </main>
+
+      <Footer />
+      
+      {/* Floating Call to Action */}
+      <WhatsAppChatButton />
+      
+    </div>
+  );
+}

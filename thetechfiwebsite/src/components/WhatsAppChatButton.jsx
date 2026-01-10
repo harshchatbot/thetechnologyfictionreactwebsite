@@ -1,40 +1,43 @@
-import React from "react";
+import React, { useState } from 'react';
+import { MessageCircle, X } from 'lucide-react';
 
-const WHATSAPP_NUMBER = "917976111087"; // your number with country code (India = 91)
-const DEFAULT_TEXT = "Hi! I’m interested in your services.";
+const WhatsAppChatButton = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const phoneNumber = "917976111087"; // Your number
+  const message = "Hi, I'm interested in your Salesforce Mentorship program."; // Pre-filled text
 
-export default function WhatsAppChatButton({
-  phone = WHATSAPP_NUMBER,
-  text = DEFAULT_TEXT,
-}) {
-  const waLink = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
-    <a
-      href={waLink}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-      className="
-        fixed bottom-6 right-6 z-50
-        w-14 h-14 rounded-full
-        bg-[#25D366] shadow-lg
-        flex items-center justify-center
-        hover:scale-105 active:scale-95
-        transition-transform
-      "
-      title="Chat on WhatsApp"
-    >
-      {/* WhatsApp icon (white) */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 32 32"
-        className="w-7 h-7"
-        fill="white"
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+      
+      {/* The Tooltip / Callout (Visible initially or on hover) */}
+      <div className={`bg-white text-primary px-4 py-2 rounded-lg shadow-lg mb-2 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+        <p className="text-sm font-bold">Have questions? Chat with me.</p>
+      </div>
+
+      {/* The Button */}
+      <a 
+        href={whatsappUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-[0_4px_12px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform duration-300"
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
       >
-        <path d="M19.11 17.44c-.29-.14-1.72-.85-1.99-.95-.27-.1-.47-.14-.66.14-.19.29-.76.95-.93 1.14-.17.19-.34.22-.63.07-.29-.14-1.21-.45-2.31-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.51l-.56-.01c-.19 0-.51.07-.78.36-.27.29-1.02.99-1.02 2.42 0 1.43 1.05 2.82 1.2 3.01.14.19 2.07 3.16 5.02 4.43.7.3 1.25.48 1.68.61.71.23 1.36.2 1.87.12.57-.09 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.19-.54-.34z" />
-        <path d="M16.02 3C9.39 3 4 8.39 4 15.02c0 2.12.55 4.16 1.6 5.97L4 29l8.2-1.56a11.95 11.95 0 0 0 3.82.62C22.61 28.06 28 22.67 28 16.04 28 9.4 22.61 3 16.02 3zm0 22.2c-1.22 0-2.42-.23-3.55-.68l-.85-.33-4.87.93.95-4.75-.36-.87a9.22 9.22 0 0 1-1.01-4.23c0-5.11 4.17-9.28 9.29-9.28 5.11 0 9.28 4.17 9.28 9.28 0 5.12-4.17 9.29-9.28 9.29z" />
-      </svg>
-    </a>
+        {/* WhatsApp Icon (SVG for perfect quality) */}
+        <svg 
+          viewBox="0 0 24 24" 
+          width="32" 
+          height="32" 
+          fill="white"
+          className="group-hover:rotate-12 transition-transform duration-300"
+        >
+           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.008-.57-.008-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </a>
+    </div>
   );
-}
+};
+
+export default WhatsAppChatButton;

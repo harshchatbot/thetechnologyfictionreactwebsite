@@ -1,184 +1,71 @@
-import { Zap, Globe, Users, Database , Smartphone, MessageCircle, Cpu } from 'lucide-react'
+import { Map, BookOpen, Users, Terminal, Code, Cpu } from 'lucide-react';
 
 export const SITE_CONFIG = {
   company: {
-    name: "TechfiLabs",
-    initials: "TF",
-    email: "thetechfilabs@gmail.com",
-    phone: "+91 7976111087",
-    address: "Jaipur, Rajasthan 302001",
-    logo: "/tech_fi_logo_512x512_image.jpeg"
+    name: "The Technology Fiction", // BRAND PIVOT
+    initials: "TTF",
+    email: "hello@thetechnologyfiction.com", // Professional Email
+    location: "Jaipur, India",
+    // Ensure this image is in your /public folder
+    logo: "/tech_fi_logo_512x512_image.jpeg" 
   },
   navigation: {
-    menuItems: ['home', 'services','coaching','blog', 'about', 'contact'],
+    menuItems: ['home', 'roadmaps', 'resources', 'mentorship'],
     ctaButton: {
-      text: "Get Started",
-      action: () => {
-        const contactSection = document.getElementById('contact')
-        if (contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' })
-        }
-      }
+      text: "Join Inner Circle",
+      action: () => window.location.href = "#newsletter"
     }
   }
-}
+};
 
-export const SERVICES_DATA = [
+// REPLACED "SERVICES" WITH "GUIDES"
+export const FEATURED_GUIDES = [
   {
-    icon: Zap,
-    title: "Salesforce Consulting & Implementation",
-    description:
-      "End-to-end Salesforce consulting and CRM implementation for startups and growing businesses.",
-    features: [
-      "Salesforce CRM Setup",
-      "Custom CRM Development",
-      "Salesforce Lightning Migration",
-      "CRM Customization Services",
-    ],
+    icon: Terminal,
+    category: "Architecture",
+    title: "Salesforce Trigger Frameworks",
+    description: "Stop writing spaghetti code. Learn the handler pattern used in enterprise orgs.",
+    link: "/blog/trigger-frameworks"
   },
   {
-    icon: Database,
-    title: "Salesforce Data Migration & ETL",
-    description:
-      "Accurate and secure Salesforce data migration with ETL, cleansing, mapping, and quality checks.",
-    features: [
-      "Discovery & Data Planning",
-      "Data Cleansing & Deduplication",
-      "Custom Field Mapping & Transformation",
-      "ETL Tool Expertise (Data Loader, DBAmp, MuleSoft, etc.)",
-      "Quality Assurance & Post-Migration Support",
-    ],
-  },
-  {
-    icon: Globe,
-    title: "Website & Web Application Development",
-    description:
-      "Modern, responsive websites and web apps built for performance, scalability, and great UX.",
-    features: [
-      "Custom Website & Portal Development",
-      "Headless CMS & Progressive Web Apps",
-      "Legacy Modernisation & Third-Party Integrations",
-      "Performance & Accessibility Optimisation",
-      "UX/UI Design & User Experience",
-    ],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile & Cross‑Platform App Development",
-    description: "Create native iOS and Android apps or cross‑platform solutions with Flutter or React Native. Our end‑to‑end services cover discovery, UI/UX design, secure backend integration, testing, launch and post‑release support. We also build progressive web apps to deliver a native‑like experience on the web.",
-    features: [
-      "Native iOS & Android App Development",
-      "Flutter & Cross‑Platform App Development",
-      "Progressive Web Apps (PWAs)",
-      "Full Lifecycle: Design, Development, Testing, Launch, Support",
-      "Scalable Architecture & Integration"
-    ]
+    icon: Code,
+    category: "LWC Development",
+    title: "Mastering Shadow DOM",
+    description: "Why your styles aren't working and how to communicate between components effectively.",
+    link: "/blog/lwc-shadow-dom"
   },
   {
     icon: Cpu,
-    title: "AI Agents & Automation",
-    description: "Revolutionize your business operations with custom AI agents designed to automate calls, collect feedback, and handle repetitive tasks intelligently. From AI-powered calling assistants to chat-driven customer engagement systems, we create end-to-end AI workflows that integrate seamlessly with your CRM and business tools to boost efficiency and enhance user experience.",
-    features: [
-      "Custom AI Calling & Voice Agents",
-      "Feedback & Lead Collection Automation",
-      "CRM Integration with Salesforce & HubSpot",
-      "Conversational AI & Chatbot Development",
-      "AI Workflow Orchestration using LangChain & n8n"
-    ]
-  },
-  {
-    icon: MessageCircle,
-    title: "WhatsApp Automation Solutions",
-    description: "Transform customer communication with powerful WhatsApp automation tailored for your business. We design and build intelligent WhatsApp workflows that automate customer support, lead generation, notifications, and marketing campaigns — all while integrating seamlessly with your existing systems like CRM, databases, and internal tools.",
-    features: [
-      "WhatsApp Chatbot & Conversational Flows",
-      "Lead Generation & Qualification Automation",
-      "WhatsApp Marketing & Broadcast Campaigns",
-      "Customer Support & Ticket Automation",
-      "CRM & Backend Integration (Salesforce, Google Sheets, APIs)",
-      "Payment, Booking & Notification Automation",
-      "AI-powered WhatsApp Assistants & Smart Replies"
-    ]
+    category: "AI & Data",
+    title: "Building AI Agents for Salesforce",
+    description: "How to integrate OpenAI with Apex using named credentials and zero middleware.",
+    link: "/blog/ai-salesforce"
   }
-  
-]
+];
 
-export const TESTIMONIALS_DATA = [
-  {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
-    content: "TechfiLabs transformed our business with their Salesforce automation. Our sales process is now 40% more efficient!",
-    rating: 5
-  },
-  {
-    name: "Michael Chen",
-    role: "CTO, InnovateCorp",
-    content: "Their React development team delivered an exceptional website that perfectly represents our brand and drives conversions.",
-    rating: 5
-  },
-  {
-    name: "Emily Rodriguez",
-    role: "Operations Manager, GrowthCo",
-    content: "Professional, reliable, and results-driven. TechfiLabs exceeded our expectations in every way.",
-    rating: 5
-  },
-  {
-    name: "Rajesh Kumar",
-    role: "Managing Director, Digital Solutions India",
-    content: "TechfiLabs helped us implement Salesforce across our entire organization. Their expertise in Indian business processes made the transition seamless. Our team productivity increased by 60% within 3 months!",
-    rating: 5
-  },
-  {
-    name: "Priya Sharma",
-    role: "Founder, E-commerce Startup, Mumbai",
-    content: "As a startup founder, I needed a professional website that could scale with our business. TechfiLabs delivered a stunning React-based platform that perfectly captures our brand essence and has significantly improved our customer engagement.",
-    rating: 5
-  },
-  {
-    name: "Amit Patel",
-    role: "IT Director, Manufacturing Solutions Ltd, Bangalore",
-    content: "We were struggling with manual processes until TechfiLabs automated our entire sales pipeline with Salesforce. The ROI was incredible - we recovered our investment in just 6 months and our sales team is now 3x more productive.",
-    rating: 5
-  }
-]
-
-export const ABOUT_DATA = {
-  stats: [
-    { number: "15+", label: "IT Projects Completed" },
-    { number: "30+", label: "Small Business Clients" },
-    { number: "10+", label: "Years Experience" },
-    { number: "24/7", label: "IT Support Available" }
-  ],
-  features: [
-    "Expert Salesforce Consultants",
-    "Affordable IT Solutions",
-    "IT Services for Small Businesses",
-    "Salesforce Consultants for Startups"
-  ]
-}
+// REPLACED "AGENCY STATS" WITH "AUTHORITY STATS"
+export const AUTHORITY_STATS = [
+  { number: "11+", label: "Years Experience" },
+  { number: "3x", label: "Salesforce Certified" },
+  { number: "20+", label: "Developers Mentored" },
+  { number: "50+", label: "Technical Articles" }
+];
 
 export const CONTACT_INFO = {
-  phone: SITE_CONFIG.company.phone,
   email: SITE_CONFIG.company.email,
-  address: SITE_CONFIG.company.address
-}
+  location: SITE_CONFIG.company.location
+};
 
+// SIMPLIFIED FOOTER (No Services)
 export const FOOTER_DATA = {
-  services: [
-    "Salesforce Consulting & Implementation",
-    "Salesforce Data Migration & ETL",
-    "Website & Web App Development",
-    "Mobile App Development",
-    "WhatsApp Automation Solutions"
-  ],
-  company: [
-    { name: "About Us", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Salesforce Blog", href: "https://thetechnologyfiction.com/blog" },
-    { name: "Contact", href: "#" }
+  explore: [
+    { name: "Latest Deep Dives", href: "#" },
+    { name: "Architect Roadmaps", href: "#" },
+    { name: "Mentorship Program", href: "/salesforce-coaching-ajmer" }, // The SEO Link
+    { name: "Privacy Policy", href: "/privacy" }
   ],
   socialLinks: [
-    { name: "Instagram", icon: "instagram", href: "#" },
-    { name: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/the-technology-fiction/" }
+    { name: "LinkedIn", icon: "linkedin", href: "https://www.linkedin.com/company/the-technology-fiction/" },
+    { name: "Twitter", icon: "twitter", href: "#" }
   ]
-} 
+};
