@@ -81,7 +81,7 @@ const Footer = () => {
         {/* BOTTOM BAR - UPDATED LINK */}
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-text-muted/60 text-xs">
-                &copy; {new Date().getFullYear()} The Technology Fiction. All rights reserved.
+                &copy; 2024 The Technology Fiction. All rights reserved.
             </p>
             
             {/* The TechFi Labs Signature Link */}
